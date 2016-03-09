@@ -1,39 +1,42 @@
-"""Use Bol.com catalogue as a provider for ISBN-data. """
+#Use the Bol.com catalogue as a provider for ISBN-data.
 
 import csv
-from functions import *
+from functions import get_from_bol
 
-with open("isbn.txt") as infile:
-    data = infile.read()
-    isbnlist = data.split()
+# with open("isbn.txt") as infile:
+#     data = infile.read()
+#     isbnlist = data.split()
 
-with open('output.csv', 'w', ) as csvfile:
-    fieldnames = [   "ISBN-13",
-                     "Title",
-                     "Authors",
-                     "Price",
-                     "Publisher",
-                     "Year",
-                     "Print",
-                     "Print_type",
-                     "Language"
-                 ]
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, dialect='excel', lineterminator='\n', delimiter=';')
+def create_csv_from_isbn(isbnlist, outfile="output.csv"):
 
-    writer.writeheader()
+    with open(outfile, 'w') as csvfile:
+        fieldnames = [   "ISBN-13",
+                         "Title",
+                         "Authors",
+                         "Price",
+                         "Publisher",
+                         "Year",
+                         "Print",
+                         "Print_type",
+                         "Language"
+                     ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, dialect='excel', lineterminator='\n', delimiter=';')
 
-    for isbn in isbnlist:
-        datadict = get_from_bol(isbn)
-        writer.writerow(datadict)
+        writer.writeheader()
+
+        count = 1
+
+        for isbn in isbnlist:
 
 
 
-# # First try the isbnlib service (Google Books and WCat)
+            try:
+                datadict = get_from_bol(isbn)
+                writer.writerow(datadict)
+            except:
+                writer.writerow({"ISBN-13": isbn})
 
-# meta_data = isbnlib.meta(isbn2)
 
-# if meta_data == None:
-#     meta_data = get_from_bol(isbn)
 
 
 

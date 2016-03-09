@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<title>Fetch ISBN info</title>
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+  <body>
+    <div class="container">
+  <img src="{{ url_for('static', filename='icon.png') }}" class="img-responsive"><h1>Fetch ISBN info</h1>
+
+<h5>
+Use the Bol.com catalogue as a provider for ISBN-data.
+</h5>
+
+
+<form id='isbnform' method='post' action='' > <!-- action is the URL you want to move to next-->
+   
+   <div class="form-group">
+   <label for="comment">ISBNs:</label>
+   
+   <textarea class="form-control" rows="15" name="isbn_list"></textarea>
+
+   </div>
+
+   <p>
+   <button class="btn btn-default" type='submit'>Submit</button> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+    </div><!-- /.container -->
+
+    <footer class='footer'>
+      <div class='container-fluid'>
+        <hr />
+        <p class='pull-right'><p class='pull-right'><a href="https://github.com/LvanWissen/bolpy">View on GitHub</a> | Leon van Wissen</p></p>
+      </div>
+    </footer>
+	</body>
+	</html>
+

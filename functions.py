@@ -1,10 +1,8 @@
 import requests
-import json
 import re
-from lxml import etree
 
-secret = YOUR_TOKEN_HERE
-#secret =
+#secret = YOUR_TOKEN_HERE
+
 
 def get_prodid_bol(isbn):
     """
