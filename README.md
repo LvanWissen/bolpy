@@ -29,5 +29,12 @@ Bootstrap webpage with a table with the following information (if available):
 Possibility to download to `*.CSV`.
 
 ## Requirements
-* Requests (http://docs.python-requests.org/en/master/)
-* Flask (http://flask.pocoo.org/)
+* [Requests](http://docs.python-requests.org/en/master/)
+* [Flask](http://flask.pocoo.org/)
+
+## Dependencies
+* [Bootstrap](http://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+* [jQuery CSV](https://github.com/evanplaice/jquery-csv/)
+* [DataTables](http://datatables.net/)
+* [csv-to-html-table](https://github.com/derekeder/csv-to-html-table)
