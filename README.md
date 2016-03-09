@@ -23,7 +23,7 @@ Bootstrap webpage with a table with the following information (if available):
 * Publisher
 * Year
 * Print
-* Print_type
+* Print_type, e.g. hardcover or paperback
 * Language
 
 Possibility to download to `*.CSV`.
